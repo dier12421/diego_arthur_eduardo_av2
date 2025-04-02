@@ -1,0 +1,24 @@
+let alunos = ["Artur", "Diego", "Eduardo"];
+let notas = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+let frequencias = [0, 0, 0];
+let medias = [0, 0, 0];
+let resultados = ["", "", ""];
+
+for (let i = 0; i < alunos.length; i++) {
+  notas[i][0] = parseInt(prompt("Digite a 1ª nota de " + alunos[i] + ":"));
+  notas[i][1] = parseInt(prompt("Digite a 2ª nota de " + alunos[i] + ":"));
+  notas[i][2] = parseInt(prompt("Digite a 3ª nota de " + alunos[i] + ":"));
+  frequencias[i] = parseInt(prompt("Digite a frequência de " + alunos[i] + " (%):"));
+}
+
+for (let i = 0; i < alunos.length; i++) {
+  medias[i] = (notas[i][0] + notas[i][1] + notas[i][2]) / 3;
+
+  if (medias[i] >= 6 && frequencias[i] >= 75) {
+    resultados[i] = "Aprovado";
+    console.log(alunos[i] + ": " + resultados[i]);
+  } else {
+    resultados[i] = "Reprovado";
+    console.log(alunos[i] + ": " + resultados[i]);
+ }
+}
